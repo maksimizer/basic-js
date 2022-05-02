@@ -24,7 +24,7 @@ function dateSample(sampleActivity) {
   let sampleActivityToNum = + sampleActivity;
   const decay = Math.LN2 / HALF_LIFE_PERIOD;
   let age = Math.ceil(Math.log(MODERN_ACTIVITY / sampleActivityToNum) / decay);
-  if (sampleActivityToNum === NaN || MODERN_ACTIVITY < sampleActivityToNum || sampleActivityToNum <= 0) {
+  if (isNaN(sampleActivityToNum) || MODERN_ACTIVITY < sampleActivityToNum || sampleActivityToNum <= 0) {
     return false;
   };
   return age;
